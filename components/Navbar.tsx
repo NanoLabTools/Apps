@@ -5,7 +5,6 @@ export const Navbar: React.FC = () => {
   const [showContact, setShowContact] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -17,7 +16,7 @@ export const Navbar: React.FC = () => {
   }, []);
 
   return (
-    <nav className="border-b border-slate-100 bg-white relative">
+    <nav className="border-b border-slate-100 bg-white/80 backdrop-blur-md relative">
       <div className="max-w-6xl mx-auto px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center space-x-4">
@@ -27,10 +26,10 @@ export const Navbar: React.FC = () => {
               </svg>
             </div>
             <div className="flex flex-col">
-              <span className="text-xl font-bold tracking-tight text-[#1e293b] leading-none">
+              <span className="text-xl font-black tracking-tight text-slate-900 leading-none">
                 NanoLabTools
               </span>
-              <span className="text-[10px] font-bold tracking-widest text-slate-400 uppercase mt-1">
+              <span className="text-[10px] font-bold tracking-[0.15em] text-slate-400 uppercase mt-1">
                 Repository
               </span>
             </div>
@@ -39,20 +38,21 @@ export const Navbar: React.FC = () => {
           <div className="relative" ref={dropdownRef}>
             <button 
               onClick={() => setShowContact(!showContact)}
-              className="px-4 h-9 flex items-center justify-center rounded-full bg-slate-100 hover:bg-slate-200 text-black transition-all focus:outline-none text-xs font-semibold"
-              aria-label="Contact information"
+              className="px-5 h-10 flex items-center justify-center rounded-full bg-slate-900 hover:bg-black text-white transition-all focus:outline-none text-xs font-bold tracking-wide"
             >
               Contact
             </button>
 
             {showContact && (
-              <div className="absolute right-0 mt-3 w-72 bg-white rounded-2xl shadow-xl border border-slate-100 p-5 z-[60] animate-in fade-in zoom-in-95 duration-150 origin-top-right">
-                <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Get in touch</h4>
-                <p className="text-sm text-slate-600 leading-relaxed">
-                  Send an email to <a href="mailto:migisber@ucm.es" className="font-semibold text-[#5850ec] hover:underline">migisber@ucm.es</a> for questions or suggestions.
+              <div className="absolute right-0 mt-4 w-80 bg-white rounded-3xl shadow-2xl shadow-indigo-100 border border-slate-100 p-6 z-[60] animate-in fade-in zoom-in-95 duration-200 origin-top-right">
+                <h4 className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-3">Support & Feedback</h4>
+                <p className="text-[13px] text-slate-600 leading-relaxed">
+                  For inquiries or feature requests, please contact us at:
+                  <a href="mailto:migisber@ucm.es" className="block mt-2 font-bold text-[#5850ec] text-sm hover:underline tracking-tight">
+                    migisber@ucm.es
+                  </a>
                 </p>
-                {/* Arrow pointer */}
-                <div className="absolute -top-1.5 right-6 w-3 h-3 bg-white border-t border-l border-slate-100 rotate-45"></div>
+                <div className="absolute -top-1.5 right-7 w-3 h-3 bg-white border-t border-l border-slate-100 rotate-45"></div>
               </div>
             )}
           </div>

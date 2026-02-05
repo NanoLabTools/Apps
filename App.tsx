@@ -18,7 +18,6 @@ const App: React.FC = () => {
         'PDF User Manual Generation',
         'Multilingual (EN/ES) UI'
       ],
-      // Apuntando a la nueva ruta en tu repositorio de GitHub
       downloadUrl: './downloads/CellLabManager.html', 
       fileName: 'CellLabManager.html',
       icon: (
@@ -36,10 +35,10 @@ const App: React.FC = () => {
       </div>
       
       <main className="flex-grow">
-        <div className="max-w-6xl mx-auto px-8 py-16">
+        <div className="max-w-6xl mx-auto px-8 py-16 animate-in fade-in slide-in-from-bottom-4 duration-700">
           <header className="mb-12">
-            <h2 className="text-xs font-black tracking-widest text-[#5850ec] uppercase mb-3">Available Apps</h2>
-            <div className="text-black text-[15px] leading-tight font-medium">
+            <h2 className="text-xs font-black tracking-[0.2em] text-[#5850ec] uppercase mb-4">Available Apps</h2>
+            <div className="text-black text-lg md:text-xl font-semibold leading-snug tracking-tight">
               <p>Click on the download button to get the standalone HTML file. No installation</p>
               <p>Required.</p>
             </div>
