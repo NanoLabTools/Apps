@@ -18,10 +18,9 @@ const App: React.FC = () => {
         'PDF User Manual Generation',
         'Multilingual (EN/ES) UI'
       ],
-      // Using a Data URI for demonstration so you can test the download immediately.
-      // In production, this would be a path like '/downloads/cell-lab-manager-v2.zip'
-      downloadUrl: 'data:application/zip;base64,UEsFBgAAAAAAAAAAAAAAAAAAAAAAAA==', 
-      fileName: 'CellLabManager_V2.zip',
+      // Apuntando a la nueva ruta en tu repositorio de GitHub
+      downloadUrl: './downloads/CellLabManager.html', 
+      fileName: 'CellLabManager.html',
       icon: (
         <svg viewBox="0 0 24 24" className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="2">
           <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
@@ -40,9 +39,10 @@ const App: React.FC = () => {
         <div className="max-w-6xl mx-auto px-8 py-16">
           <header className="mb-12">
             <h2 className="text-xs font-black tracking-widest text-[#5850ec] uppercase mb-3">Available Apps</h2>
-            <p className="text-slate-500 text-[15px] leading-relaxed whitespace-nowrap">
-              Click on the download button to get the standalone HTML file. No installation required.
-            </p>
+            <div className="text-black text-[15px] leading-tight font-medium">
+              <p>Click on the download button to get the standalone HTML file. No installation</p>
+              <p>Required.</p>
+            </div>
           </header>
           
           <AppSection apps={apps} />
