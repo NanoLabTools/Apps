@@ -43,7 +43,6 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
 </head>
 <body>
     <div id="root"></div>
@@ -190,9 +189,18 @@
                                 <h1 className="text-4xl font-black text-slate-900 tracking-tight mb-2">
                                     A toolbox of apps for daily lab management
                                 </h1>
-                                <p className="text-xl md:text-2xl font-medium text-slate-500 mb-12">
+                                <p className="text-xl md:text-2xl font-medium text-slate-500 mb-10">
                                     By scientists, for scientists
                                 </p>
+                                
+                                <div className="w-full mb-14 overflow-hidden rounded-[2.5rem] border border-slate-100 bg-white shadow-2xl shadow-indigo-50/50">
+                                    <img 
+                                        src="./assets/workflow.png" 
+                                        alt="Lab Management Workflow" 
+                                        className="w-full h-auto block"
+                                    />
+                                </div>
+
                                 <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">
                                     Available Apps
                                 </h2>
@@ -239,6 +247,5 @@
         const root = ReactDOM.createRoot(document.getElementById('root'));
         root.render(<App />);
     </script>
-<script type="module" src="/index.tsx"></script>
 </body>
 </html>
